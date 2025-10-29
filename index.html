@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUAT WEB APK RAZOROFFCIAL</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://files.catbox.moe/l1yjns.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>buat Website Jadi APK</h2>
+    <p>Masukkan URL websitemu di bawah:</p>
+    <input type="url" id="url" placeholder="https://contohwebmu.com" />
+    <button onclick="buatAPK()">Buat APK</button>
+    <p id="hasil"></p>
+  </div>
+
+  <script>
+    function buatAPK() {
+      const url = document.getElementById('url').value;
+      if (!url) {
+        alert("Masukkan URL terlebih dahulu!");
+        return;
+      }
+      const link = `https://www.pwabuilder.com/?site=${encodeURIComponent(url)}`;
+      document.getElementById('hasil').innerHTML = `
+        <p>➡️ Klik link di bawah untuk membuat APK:</p>
+        <a href="${link}" target="_blank" style="color: #00ffcc;">${link}</a>
+      `;
+    }
+  </script>
+</body>
+</html>
